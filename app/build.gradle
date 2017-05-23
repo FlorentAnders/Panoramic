@@ -7,7 +7,7 @@ android {
         applicationId "com.fa.imaged"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 200
+        versionCode 201
         versionName "@string/version_number"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary true

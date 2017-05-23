@@ -53,7 +53,7 @@ public class PreferencesFragment extends PreferenceFragment implements BillingPr
             }
         });
 
-        findPreference("navigationcolor").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        findPreference("navigationColor").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
                 if(!DonateActivity.isPlus(getActivity())){
