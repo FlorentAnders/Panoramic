@@ -129,6 +129,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:layout_alignParentTop="true"
                 android:layout_gravity="top"
+                android:elevation="4dp"
                 android:background="@android:color/transparent"
                 app:layout_collapseMode="pin"
                 app:popupTheme="?attr/account_toolbar_popup_theme" />
@@ -147,7 +148,8 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabBackground="?android:colorBackground">
+            android:elevation="4dp"
+            app:tabBackground="?attr/toolbar_background_color">
 
             <android.support.design.widget.TabItem
                 android:layout_width="wrap_content"

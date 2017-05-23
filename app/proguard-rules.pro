@@ -33,9 +33,9 @@
     @retrofit2.http.* <methods>;
 }
 
--keep class com.keylesspalace.tusky.entity.** { *; }
+-keep class com.fa.mastodon.entity.** { *; }
 
--keep public enum com.keylesspalace.tusky.entity.*$** {
+-keep public enum com.fa.mastodon.entity.*$** {
     **[] $VALUES;
     public *;
 }
@@ -51,3 +51,6 @@
     public static *** v(...);
     public static *** i(...);
 }
+
+-verbose
+-optimizationpasses 3

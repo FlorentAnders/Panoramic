@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "268851337880",
-    "firebase_url": "https://tusky-62772.firebaseio.com",
-    "project_id": "tusky-62772",
-    "storage_bucket": "tusky-62772.appspot.com"
+    "project_number": "155367271408",
+    "firebase_url": "https://aiceo-c476f.firebaseio.com",
+    "project_id": "aiceo-c476f",
+    "storage_bucket": "aiceo-c476f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:268851337880:android:fc4111b1d145a00e",
+        "mobilesdk_app_id": "1:155367271408:android:c12006259862d4e6",
         "android_client_info": {
-          "package_name": "com.keylesspalace.tusky"
+          "package_name": "com.fa.imaged"
         }
       },
       "oauth_client": [
         {
-          "client_id": "268851337880-eie2ssto2d21bfihn9d1qupcrke8oebf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.keylesspalace.tusky",
-            "certificate_hash": "18d196307d6e928e99c2e0bb9818c01c38aff2f9"
-          }
-        },
-        {
-          "client_id": "268851337880-n19d05m282nirs1fc9kdd5n4of6je4fk.apps.googleusercontent.com",
+          "client_id": "155367271408-of9d2vavpltmcv83stdhh6aun4u2e7cr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbJtSjuk4I3Jy8PdUaO3TaQOXubcOUElo"
+          "current_key": "AIzaSyAB2SZ3JUUZww99T2-I_oXRNRe64RH65-0"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "268851337880-n19d05m282nirs1fc9kdd5n4of6je4fk.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

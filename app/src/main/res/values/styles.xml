@@ -16,7 +16,8 @@
     </style>
     
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="colorPrimaryDark">#CCEEEEEE</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 
@@ -90,6 +91,9 @@
         <item name="floatingSearch_menuItemIconColor">@color/toolbar_icon_dark</item>
         <item name="floatingSearch_suggestionRightIconColor">@color/toolbar_icon_dark</item>
         <item name="floatingSearch_actionMenuOverflowColor">@color/toolbar_icon_dark</item>
+
+        <item name="cardStyle">@drawable/card_background_dark</item>
+        <item name="separatorColor">@color/status_reblog_button_dark</item>
     </style>
 
     <style name="AppTheme.ImageButton.Dark" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
@@ -158,15 +162,14 @@
         <item name="report_status_background_color">@color/report_status_background_light</item>
         <item name="report_status_divider_drawable">@drawable/report_status_divider_light</item>
 
-        <item name="material_drawer_background">@color/window_background_light</item>
-        <item name="material_drawer_primary_text">@color/text_color_primary_light</item>
-        <item name="material_drawer_primary_icon">@color/toolbar_icon_light</item>
-        <item name="material_drawer_secondary_text">@color/text_color_secondary_light</item>
-        <item name="material_drawer_hint_text">@color/text_color_tertiary_light</item>
-        <item name="material_drawer_divider">@color/color_primary_dark_light</item>
-        <item name="material_drawer_selected">@color/color_primary_light</item>
-        <item name="material_drawer_selected_text">@color/text_color_primary_light</item>
-        <item name="material_drawer_header_selection_text">@color/text_color_primary_dark</item> <!--Intentionally dark so it can be overlayed over the account's header image.-->
+        <item name="material_drawer_background">#FFFFFF</item>
+        <item name="material_drawer_selected">#FFFFFF</item>
+        <item name="material_drawer_selected_text">#000000</item>
+        <item name="material_drawer_primary_text">#757575</item>
+        <item name="material_drawer_primary_icon">#757575</item>
+        <item name="material_drawer_divider">@color/material_drawer_divider</item>
+        <item name="material_drawer_secondary_text">@color/material_drawer_secondary_text</item>
+        <item name="material_drawer_hint_text">@color/material_drawer_hint_text</item>
 
         <item name="floatingSearch_backgroundColor">@color/toolbar_background_light</item>
         <item name="floatingSearch_viewTextColor">@color/text_color_secondary_light</item>
@@ -177,6 +180,9 @@
         <item name="floatingSearch_menuItemIconColor">@color/toolbar_icon_light</item>
         <item name="floatingSearch_suggestionRightIconColor">@color/toolbar_icon_light</item>
         <item name="floatingSearch_actionMenuOverflowColor">@color/toolbar_icon_light</item>
+
+        <item name="cardStyle">@drawable/card_background_light</item>
+        <item name="separatorColor">@color/ee</item>
     </style>
 
     <style name="AppTheme.ImageButton.Light" parent="Widget.AppCompat.Button.Borderless.Colored">
@@ -192,6 +198,13 @@
         <item name="android:textColorPrimary">@color/text_color_primary_light</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="DonationTheme" parent="@style/Theme.AppCompat">
+        <!-- No backgrounds, titles or window float -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 </resources>

@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:layout_margin="9dp"
+    android:elevation="2dp"
+    android:background="?cardStyle"
     android:id="@+id/status_container">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/status_reblogged_bar"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="@dimen/status_reblogged_bar_top_padding">
@@ -36,13 +39,14 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:scaleType="fitCenter"
         android:id="@+id/status_avatar"
         android:layout_below="@+id/status_reblogged_bar"
-        android:layout_marginTop="11dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="14dp"
+        android:paddingLeft="7dp"
         android:contentDescription="@string/action_view_profile" />
 
     <RelativeLayout
@@ -61,6 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="20m"
+            android:textSize="15sp"
+            android:paddingRight="7dp"
             android:textColor="?android:textColorSecondary" />
 
         <LinearLayout
@@ -78,6 +84,7 @@
                 android:textColor="?android:textColorPrimary"
                 android:textStyle="normal|bold"
                 android:ellipsize="end"
+                android:textSize="15sp"
                 android:maxLines="1"
                 android:text="Name"
                 android:paddingRight="@dimen/status_display_name_right_padding" />
@@ -88,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="?android:textColorSecondary"
                 android:maxLines="1"
+                android:textSize="15sp"
                 android:ellipsize="end"
                 android:text="Username is the slongest thing ever i am totally going" />
 
@@ -95,7 +103,7 @@
 
     </RelativeLayout>
 
-    <com.keylesspalace.tusky.util.FlowLayout
+    <com.fa.mastodon.util.FlowLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/status_content_warning_bar"
@@ -127,14 +135,14 @@
             android:textAllCaps="true"
             android:background="?attr/content_warning_button" />
 
-    </com.keylesspalace.tusky.util.FlowLayout>
+    </com.fa.mastodon.util.FlowLayout>
 
     <TextView
         android:id="@+id/status_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="?android:textColorPrimary"
-        android:layout_marginBottom="4dp"
+        android:textColor="?android:textColorSecondary"
+        android:layout_marginBottom="8dp"
         android:layout_toRightOf="@+id/status_avatar"
         android:layout_toEndOf="@+id/status_avatar"
         android:layout_below="@+id/status_content_warning_bar"
@@ -236,65 +244,65 @@
         </LinearLayout>
     </FrameLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/status_media_preview_container"
+        android:id="@+id/separatorLine"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="?separatorColor"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/status_media_preview_container"
-        android:layout_toRightOf="@+id/status_avatar"
+        android:layout_below="@id/separatorLine"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:clipChildren="false"
-        android:clipToPadding="false"
-        android:paddingBottom="2dp">
+        android:clipToPadding="false">
 
         <ImageButton
             app:srcCompat="@drawable/ic_reply_24dp"
             android:id="@+id/status_reply"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
             android:padding="4dp"
             style="?attr/image_button_style"
             android:contentDescription="@string/action_reply" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
 
         <com.varunest.sparkbutton.SparkButton
             android:id="@+id/status_reblog"
             app:sparkbutton_activeImage="@drawable/reblog_active"
             app:sparkbutton_inActiveImage="?attr/status_reblog_inactive_drawable"
-            app:sparkbutton_iconSize="28dp"
+            app:sparkbutton_iconSize="24dp"
             android:layout_gravity="center"
+            android:layout_weight="1"
             app:sparkbutton_primaryColor="@color/status_reblog_button_marked_dark"
             app:sparkbutton_secondaryColor="@color/status_reblog_button_marked_light"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:padding="4dp"
             android:contentDescription="@string/action_reblog" />
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <com.varunest.sparkbutton.SparkButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             app:sparkbutton_activeImage="?attr/status_favourite_active_drawable"
             app:sparkbutton_inActiveImage="?attr/status_favourite_inactive_drawable"
-            app:sparkbutton_iconSize="28dp"
+            app:sparkbutton_iconSize="24dp"
             android:layout_gravity="center"
+            android:layout_weight="1"
             app:sparkbutton_primaryColor="@color/status_favourite_button_marked_dark"
             app:sparkbutton_secondaryColor="@color/status_favourite_button_marked_light"
             android:id="@+id/status_favourite"
             android:padding="4dp"
             android:contentDescription="@string/action_favourite" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
 
         <ImageButton
             app:srcCompat="@drawable/ic_more_horiz_24dp"
@@ -302,13 +310,10 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:padding="4dp"
+            android:layout_gravity="center_vertical"
             style="?attr/image_button_style"
+            android:layout_weight="1"
             android:contentDescription="@string/action_more" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
 
     </LinearLayout>
 

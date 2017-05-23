@@ -12,7 +12,7 @@ android:orientation="vertical">
     android:id="@+id/imageView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:srcCompat="@drawable/elephant_friend" />
+    app:srcCompat="@drawable/elephant" />
 
 <TextView
     android:id="@+id/textView"

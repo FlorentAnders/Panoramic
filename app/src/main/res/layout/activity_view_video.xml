@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/view_video_background"
     android:id="@+id/view_video_container"
-    tools:context=".ViewVideoActivity">
+    tools:context="com.fa.mastodon.activity.ViewVideoActivity">
     <VideoView
         android:id="@+id/video_player"
         android:layout_marginTop="?attr/actionBarSize"

@@ -54,7 +54,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
 
-            <com.keylesspalace.tusky.util.EditTextTyped
+            <com.fa.mastodon.util.EditTextTyped
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/compose_edit_field"
@@ -104,6 +104,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_marginRight="8dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/ic_camera_24dp"
                 android:contentDescription="@string/action_photo_take" />
 
@@ -113,6 +114,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_marginRight="8dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/ic_attach_file_24dp"
                 android:contentDescription="@string/action_photo_pick" />
 
@@ -123,6 +125,7 @@
                 android:layout_height="32dp"
                 android:layout_marginRight="8dp"
                 app:srcCompat="@drawable/ic_public_24dp"
+                android:layout_weight="1"
                 android:contentDescription="@string/action_compose_options" />
 
             <Button

@@ -96,7 +96,7 @@
     <string name="send_status_link_to">Toot-Link teilen</string>
     <!-- <string name="send_status_content_to">Share toot to…</string> -->
 
-    <string name="search">Suche Accounts…</string>
+    <string name="search">Accounts suchen…</string>
 
     <string name="confirmation_send">Toot!</string>
     <string name="confirmation_reported">Gesendet!</string>
@@ -127,21 +127,21 @@
     <string name="visibility_private">Nur für Follower und Erwähnte sichtbar</string>
 
     <string name="pref_title_notification_settings">Benachrichtigungen</string>
-    <string name="pref_title_edit_notification_settings">Benachrichtigungseinstellungen</string>
+    <string name="pref_title_edit_notification_settings">Konfigurieren</string>
     <string name="pref_title_notifications_enabled">Push-Benachrichtigungen</string>
     <string name="pref_title_notification_alerts">Benachrichtigungen</string>
-    <string name="pref_title_notification_alert_sound">Benachrichtige mit Sound</string>
-    <string name="pref_title_notification_alert_vibrate">Benachrichtige mit Vibration</string>
-    <string name="pref_title_notification_alert_light">Benachrichtige mit Licht</string>
+    <string name="pref_title_notification_alert_sound">Sound</string>
+    <string name="pref_title_notification_alert_vibrate">Vibration</string>
+    <string name="pref_title_notification_alert_light">Licht</string>
     <string name="pref_title_notification_filters">Benachrichtigen wenn</string>
     <string name="pref_title_notification_filter_mentions">Ich erwähnt werde</string>
     <string name="pref_title_notification_filter_follows">Mir jemand folgt</string>
     <string name="pref_title_notification_filter_reblogs">Jemand meine Posts teilt</string>
     <string name="pref_title_notification_filter_favourites">Jemandem meine Posts gefallen</string>
     <string name="pref_title_appearance_settings">Aussehen</string>
-    <string name="pref_title_light_theme">Benutze helles Theme</string>
+    <string name="pref_title_light_theme">Helles Thema</string>
     <string name="pref_title_browser_settings">Browser</string>
-    <string name="pref_title_custom_tabs">Öffne Links in der App</string>
+    <string name="pref_title_custom_tabs">Links in der App öffnen</string>
     <string name="pref_title_hide_follow_button">Verstecke Button bei Bildlauf </string>
 
     <string name="notification_mention_format">%s hat dich erwähnt</string>
@@ -152,6 +152,7 @@
 
     <string name="description_account_locked">Gesperrter Account</string>
     <string name="action_edit_profile">Profil bearbeiten</string>
+    <string name="title_edit_profile">Profil bearbeiten</string>
     <string name="action_photo_take">Foto machen</string>
     <string name="action_save">Speichern</string>
     <string name="action_undo">rückgängig machen</string>
@@ -172,8 +173,50 @@
     <string name="send_status_content_to">Toot-Inhalt teilen</string>
     <string name="confirmation_unmuted">Stummschaltung aufgehoben</string>
     <string name="dialog_message_follow_request">Followanfrage gesendet: Warten auf Antwort</string>
-    <string name="footer_empty">Noch keine Toots hier! Ziehe nach unten um zu aktualisieren!</string>
+    <string name="footer_empty">Noch keine Toots hier! Ziehe nach unten, um zu aktualisieren!</string>
     <string name="error_empty">Das darf nicht leer sein.</string>
     <string name="hint_display_name">Name</string>
 
+    <string name="discover">Entdecken</string>
+
+    <string name="areyousure">Bist du sicher?</string>
+    <string name="abort">Abmelden</string>
+
+    <string name="color_navigation">Navigationsleiste färben</string>
+    <string name="rounded_images">Runde Profilbilder</string>
+
+    <string name="login_connection">Bitte warten…</string>
+
+    <string name="thanks_translators">Danke an Sophie Wolff\n
+        Danke an Keyless Palace\n
+        Basiert auf Tusky</string>
+
+    <string name="copyright_summary">Sieh dir an, wer Panoramic so super gemacht hat</string>
+    <string name="copyright_title">Copyright</string>
+
+    <string name="pref_title_status_filter">Neuigkeiten</string>
+    <string name="pref_title_status_tabs">Tabs</string>
+
+    <string name="pref_title_show_boosts">Boosts anzeigen</string>
+    <string name="pref_title_show_replies">Antworten anzeigen</string>
+
+    <string name="imprint">Impressum</string>
+
+    <string name="version">Version</string>
+
+    <string name="based">Basiert auf Tusky</string>
+    <string name="based_summary">Tippe, um es anzusehen</string>
+
+    <string name="license">GPLv3-Lizensiert</string>
+    <string name="license_summary">Tippe, um den Code anzusehen</string>
+
+    <string name="help">Hilfe</string>
+    <string name="remads">Werbung entfernen und Funktionen erweitern</string>
+    <string name="remads_summary">Panoramic+ kaufen, um uns zu helfen</string>
+
+    <string name="donate">Spenden</string>
+    <string name="donate_summary">Weiterentwicklung unterstützen</string>
+
+    <string name="plus_intro">Diese Funktion ist nur in Panoramic+ verfügbar</string>
+    <string name="plus_get">Laden</string>
 </resources>

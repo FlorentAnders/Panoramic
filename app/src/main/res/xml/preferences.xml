@@ -2,21 +2,46 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="@string/preferences_file_key">
 
-    <PreferenceCategory android:title="@string/pref_title_appearance_settings">
+    <PreferenceCategory android:title="@string/help">
 
-        <CheckBoxPreference
-            android:key="lightTheme"
-            android:title="@string/pref_title_light_theme"
-            android:defaultValue="false" />
+        <Preference
+            android:key="remads"
+            android:title="@string/remads"
+            android:summary="@string/remads_summary" />
 
-        <CheckBoxPreference
-            android:key="fabHide"
-            android:title="@string/pref_title_hide_follow_button"
-            android:defaultValue="false" />
+        <Preference
+            android:title="@string/donate"
+            android:summary="@string/donate_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.fa.imaged"
+                android:targetClass="com.fa.donation.DonateActivity"
+                />
+        </Preference>
 
     </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_appearance_settings">
+
+        <SwitchPreference
+            android:key="lightTheme"
+            android:title="@string/pref_title_light_theme"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="navigationColor"
+            android:title="@string/color_navigation"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="roundPics"
+            android:title="@string/rounded_images"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/pref_title_browser_settings">
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="customTabs"
             android:title="@string/pref_title_custom_tabs"
             android:defaultValue="true" />
@@ -28,11 +53,11 @@
             <PreferenceCategory
                 android:dependency="notificationsEnabled"
                 android:title="@string/title_home">
-                <CheckBoxPreference
+                <SwitchPreference
                     android:key="tabFilterHomeBoosts"
                     android:title="@string/pref_title_show_boosts"
                     android:defaultValue="true" />
-                <CheckBoxPreference
+                <SwitchPreference
                     android:key="tabFilterHomeReplies"
                     android:title="@string/pref_title_show_replies"
                     android:defaultValue="true" />
@@ -44,7 +69,7 @@
     <PreferenceCategory android:title="@string/pref_title_notification_settings">
     <PreferenceScreen android:title="@string/pref_title_edit_notification_settings">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="notificationsEnabled"
             android:title="@string/pref_title_notifications_enabled"
             android:defaultValue="true" />
@@ -53,22 +78,22 @@
             android:dependency="notificationsEnabled"
             android:title="@string/pref_title_notification_filters">
 
-            <CheckBoxPreference
+            <SwitchPreference
                 android:key="notificationFilterMentions"
                 android:title="@string/pref_title_notification_filter_mentions"
                 android:defaultValue="true" />
 
-            <CheckBoxPreference
+            <SwitchPreference
                 android:key="notificationFilterFollows"
                 android:title="@string/pref_title_notification_filter_follows"
                 android:defaultValue="true" />
 
-            <CheckBoxPreference
+            <SwitchPreference
                 android:key="notificationFilterReblogs"
                 android:title="@string/pref_title_notification_filter_reblogs"
                 android:defaultValue="true" />
 
-            <CheckBoxPreference
+            <SwitchPreference
                 android:key="notificationFilterFavourites"
                 android:title="@string/pref_title_notification_filter_favourites"
                 android:defaultValue="true" />
@@ -79,17 +104,17 @@
             android:dependency="notificationsEnabled"
             android:title="@string/pref_title_notification_alerts">
 
-            <CheckBoxPreference
+            <SwitchPreference
                 android:key="notificationAlertSound"
                 android:title="@string/pref_title_notification_alert_sound"
                 android:defaultValue="true" />
 
-            <CheckBoxPreference
+            <SwitchPreference
                 android:key="notificationAlertVibrate"
                 android:title="@string/pref_title_notification_alert_vibrate"
                 android:defaultValue="true" />
 
-            <CheckBoxPreference
+            <SwitchPreference
                 android:key="notificationAlertLight"
                 android:title="@string/pref_title_notification_alert_light"
                 android:defaultValue="true" />
@@ -97,5 +122,39 @@
         </PreferenceCategory>
 
     </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/imprint">
+
+        <Preference
+            android:title="@string/version"
+            android:summary="@string/version_number" />
+
+        <Preference
+            android:title="@string/copyright_title"
+            android:summary="@string/copyright_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.fa.imaged"
+                android:targetClass="com.fa.mastodon.activity.AboutActivity"
+                />
+        </Preference>
+
+        <Preference
+            android:title="@string/based"
+            android:summary="@string/based_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://play.google.com/store/apps/details?id=com.keylesspalace.tusky" />
+        </Preference>
+
+        <Preference
+            android:title="@string/license"
+            android:summary="@string/license_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/FlorentAnders/Panoramic" />
+        </Preference>
+
     </PreferenceCategory>
 </PreferenceScreen>

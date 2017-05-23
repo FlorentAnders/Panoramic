@@ -189,4 +189,45 @@
     <string name="status_share_link">Share link to toot</string>
 
     <string name="state_follow_requested">Follow requested</string>
+
+    <string name="discover">Discover</string>
+
+    <string name="areyousure">Are you sure?</string>
+    <string name="abort">Abort</string>
+
+    <string name="color_navigation">Navigation Bar Tinting</string>
+    <string name="rounded_images">Rounded profile pictures</string>
+
+    <string name="thanks_translators">Thanks to Sophie Wolff\n
+        Thanks to Keyless Palace\n
+        Based on Tusky</string>
+
+    <string name="copyright_summary">Check out who has made Panoramic so great</string>
+    <string name="copyright_title">Copyright</string>
+
+    <string name="imprint">Imprint</string>
+
+    <string name="version">Version</string>
+
+    <string name="based">Based on Tusky</string>
+    <string name="based_summary">Tap to check it out</string>
+
+    <string name="license">Licensed under GPLv3</string>
+    <string name="license_summary">Tap to check out the source</string>
+
+    <string name="help">Help</string>
+    <string name="remads">Remove ads and get more features</string>
+    <string name="remads_summary">Purchase Panoramic+ to support us</string>
+
+    <string name="donation_small">BASIC</string>
+    <string name="donation_standard">STANDARD</string>
+    <string name="donation_medium">MEDIUM</string>
+    <string name="donation_large">LARGE</string>
+    <string name="donation_xl">EXTRA LARGE</string>
+
+    <string name="donate">Donate</string>
+    <string name="donate_summary">Support further development</string>
+
+    <string name="plus_intro">This is only available to Panoramic+</string>
+    <string name="plus_get">Get</string>
 </resources>

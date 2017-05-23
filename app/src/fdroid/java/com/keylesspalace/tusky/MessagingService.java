@@ -25,13 +25,13 @@ import android.text.Spanned;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import com.keylesspalace.tusky.entity.Notification;
-import com.keylesspalace.tusky.json.SpannedTypeAdapter;
-import com.keylesspalace.tusky.json.StringWithEmoji;
-import com.keylesspalace.tusky.json.StringWithEmojiTypeAdapter;
-import com.keylesspalace.tusky.network.MastodonAPI;
-import com.keylesspalace.tusky.util.NotificationMaker;
-import com.keylesspalace.tusky.util.OkHttpUtils;
+import com.fa.mastodon.entity.Notification;
+import com.fa.mastodon.json.SpannedTypeAdapter;
+import com.fa.mastodon.json.StringWithEmoji;
+import com.fa.mastodon.json.StringWithEmojiTypeAdapter;
+import com.fa.mastodon.network.MastodonAPI;
+import com.fa.mastodon.util.NotificationMaker;
+import com.fa.mastodon.util.OkHttpUtils;
 
 import java.util.HashSet;
 import java.util.List;

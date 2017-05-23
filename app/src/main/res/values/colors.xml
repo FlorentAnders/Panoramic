@@ -43,7 +43,7 @@
     <color name="color_accent_light">#2b90d9</color>
     <color name="button_light">#52a5e0</color>
     <color name="color_background_light">#f4f4f4</color>
-    <color name="window_background_light">#f4f4f4</color>
+    <color name="window_background_light">#ffffff</color>
     <color name="edit_text_color_light">#000000</color>
     <color name="text_color_primary_light">#000000</color>
     <color name="text_color_secondary_light">#3c3c3c</color>
@@ -72,4 +72,5 @@
     <color name="report_status_divider_light">#9F9F9F</color>
     <color name="custom_tab_toolbar_light">#ffffff</color>
 
+    <color name="ee">#EEEEEE</color>
 </resources>

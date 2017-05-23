@@ -7,7 +7,6 @@
     </item>
     <item>
         <bitmap
-            android:src="@mipmap/ic_logo"
             android:gravity="center"
             android:tileMode="disabled" />
     </item>
