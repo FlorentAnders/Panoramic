@@ -1,4 +1,4 @@
-/* Copyright 2017 Andrew Dawson
+/* Copyright (C) 2017 Andrew Dawson
  *
  * This file is a part of Tusky.
  *
