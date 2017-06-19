@@ -11,9 +11,17 @@ import android.support.v4.content.ContextCompat;
 import android.text.style.URLSpan;
 import android.view.View;
 
+import com.fa.donation.DonateActivity;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.keylesspalace.tusky.R;
 
 class CustomTabURLSpan extends URLSpan {
+
+    private InterstitialAd mInterstitialAd;
+
     CustomTabURLSpan(String url) {
         super(url);
     }
@@ -54,6 +62,25 @@ class CustomTabURLSpan extends URLSpan {
             } else {
                 customTabsIntent.intent.setPackage(packageName);
                 customTabsIntent.launchUrl(context, uri);
+
+                if(!DonateActivity.isPlus(widget.getContext())){
+                    // Initialize the Mobile Ads SDK.
+                    MobileAds.initialize(widget.getContext(), "ca-app-pub-8245120186869512~8307608980");
+
+                    mInterstitialAd = new InterstitialAd(widget.getContext());
+                    mInterstitialAd.setAdUnitId("ca-app-pub-8245120186869512/6519380986");
+
+                    AdRequest adRequest = new AdRequest.Builder()
+                            .build();
+
+                    mInterstitialAd.loadAd(adRequest);
+
+                    mInterstitialAd.setAdListener(new AdListener(){
+                        public void onAdLoaded(){
+                            mInterstitialAd.show();
+                        }
+                    });
+                }
             }
         } catch (ActivityNotFoundException e) {
             Log.w("URLSpan", "Activity was not found for intent, " + customTabsIntent.toString());

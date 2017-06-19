@@ -82,24 +82,35 @@ public class BaseActivity extends AppCompatActivity {
         /* There isn't presently a way to globally change the theme of a whole application at
          * runtime, just individual activities. So, each activity has to set its theme before any
          * views are created. */
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("lightTheme", true)) {
+
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("light")){
             setTheme(R.style.AppTheme_Light);
             selectedColor = Color.parseColor("#727272");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 getWindow().setStatusBarColor(Color.parseColor("#CCEEEEEE"));
                 getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             }
+        } else if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("black")){
+            setTheme(R.style.AppThemeAmoled);
+            selectedColor = Color.parseColor("#000000");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                getWindow().setStatusBarColor(Color.parseColor("#000000"));
+            }
         }
 
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("navigationColor", false)) {
             if(DonateActivity.isPlus(this)){
-                if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("lightTheme", true)) {
+                if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("light")){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         getWindow().setNavigationBarColor(Color.parseColor("#969696"));
                     }
-                } else {
+                } else if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("black")){
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         getWindow().setNavigationBarColor(Color.parseColor("#4c5368"));
+                    }
+                } else {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        getWindow().setNavigationBarColor(Color.parseColor("#000000"));
                     }
                 }
             }

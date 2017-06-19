@@ -25,7 +25,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
@@ -72,7 +71,6 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader;
@@ -112,9 +110,12 @@ public class MainActivity extends BaseActivity implements SFragment.OnUserRemove
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("lightTheme", true)) {
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("light")){
             View view = this.getWindow().getDecorView();
             view.setBackgroundColor(Color.parseColor("#EEEEEE"));
+        } else if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("black")){
+            View view = this.getWindow().getDecorView();
+            view.setBackgroundColor(Color.parseColor("#000000"));
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -190,9 +191,12 @@ public class MainActivity extends BaseActivity implements SFragment.OnUserRemove
         bottomNavigation.addItem(item3);
         bottomNavigation.addItem(item4);
 
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("lightTheme", true)) {
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("light")){
             bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FFFFFF"));
             bottomNavigation.setInactiveColor(Color.parseColor("#727272"));
+        } else if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("black")){
+            bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#000000"));
+            bottomNavigation.setInactiveColor(Color.parseColor("#DDDDDD"));
         } else {
             bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#363c4b"));
             bottomNavigation.setInactiveColor(Color.parseColor("#68738f"));
@@ -401,7 +405,7 @@ public class MainActivity extends BaseActivity implements SFragment.OnUserRemove
                                 Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
                                 startActivity(intent);
                             } else if (drawerItemIdentifier == 1) {
-                                Intent intent = new Intent(MainActivity.this, FavouritesActivity.class);
+                                Intent intent = new Intent(MainActivity.this, FavoritesActivity.class);
                                 startActivity(intent);
                             } else if (drawerItemIdentifier == 2) {
                                 Intent intent = new Intent(MainActivity.this, AccountListActivity.class);
@@ -562,6 +566,11 @@ public class MainActivity extends BaseActivity implements SFragment.OnUserRemove
                 textView.setEllipsize(TextUtils.TruncateAt.END);
             }
         });
+
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("black")){
+            searchView.setBackgroundColor(Color.parseColor("#444444"));
+        }
+
     }
 
     private void fetchUserInfo() {

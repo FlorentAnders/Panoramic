@@ -73,7 +73,7 @@
         <activity android:name="com.fa.mastodon.activity.EditProfileActivity" />
         <activity android:name="com.fa.mastodon.activity.PreferencesActivity"
             android:label="@string/action_view_preferences" />
-        <activity android:name="com.fa.mastodon.activity.FavouritesActivity" />
+        <activity android:name="com.fa.mastodon.activity.FavoritesActivity" />
         <activity android:name="com.fa.mastodon.activity.AccountListActivity" />
         <activity android:name="com.fa.mastodon.activity.AboutActivity" />
         <activity

@@ -176,6 +176,14 @@ public class DonateActivity extends AppCompatActivity implements BillingProcesso
         }
     }
 
+    public static Boolean isPlus(Context activity) {
+        if (PreferenceManager.getDefaultSharedPreferences(activity).getBoolean("haspaidplus", false)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Query the signature for this application to detect whether it matches the
      * signature of the real developer. If it doesn't the app must have been

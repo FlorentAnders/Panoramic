@@ -20,12 +20,16 @@ import android.graphics.Color;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spanned;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -214,6 +218,8 @@ class StatusViewHolder extends RecyclerView.ViewHolder {
 
         final int n = Math.min(attachments.length, Status.MAX_MEDIA_ATTACHMENTS);
 
+        boolean hasAnImage = false;
+
         for (int i = 0; i < n; i++) {
             String previewUrl = attachments[i].previewUrl;
 
@@ -228,6 +234,8 @@ class StatusViewHolder extends RecyclerView.ViewHolder {
                         .load(previewUrl)
                         .placeholder(mediaPreviewUnloadedId)
                         .into(previews[i]);
+
+                hasAnImage = true;
             }
 
             final String url = attachments[i].url;
@@ -243,7 +251,6 @@ class StatusViewHolder extends RecyclerView.ViewHolder {
                     }
                 });
             }
-
 
         }
 
@@ -261,6 +268,19 @@ class StatusViewHolder extends RecyclerView.ViewHolder {
         // Hide any of the placeholder previews beyond the ones set.
         for (int i = n; i < Status.MAX_MEDIA_ATTACHMENTS; i++) {
             previews[i].setVisibility(View.GONE);
+        }
+
+        if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("stories", false)){
+            if(!hasAnImage){
+                content.setTextSize(20F);
+                RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+                lp.setMargins(0, 0, 0, 0);
+                lp.addRule(RelativeLayout.BELOW, 0);
+                lp.addRule(RelativeLayout.CENTER_VERTICAL, 1);
+
+                content.setLayoutParams(lp);
+                content.setGravity(Gravity.CENTER_VERTICAL);
+            }
         }
     }
 

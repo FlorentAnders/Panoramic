@@ -23,10 +23,24 @@
 
     <PreferenceCategory android:title="@string/pref_title_appearance_settings">
 
+        <ListPreference
+            android:key="theme_selection"
+            android:title="@string/theme"
+            android:summary="@string/theme_summary"
+            android:defaultValue="light"
+            android:entries="@array/themes_array"
+            android:entryValues="@array/themes_inserted" />
+
         <SwitchPreference
-            android:key="lightTheme"
-            android:title="@string/pref_title_light_theme"
-            android:defaultValue="true" />
+            android:key="stories"
+            android:title="@string/stories_enable"
+            android:summary="@string/stories_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="screenFilling"
+            android:title="@string/screenfilling_cards"
+            android:defaultValue="false" />
 
         <SwitchPreference
             android:key="navigationColor"

@@ -15,12 +15,15 @@
 
 package com.fa.mastodon.adapter;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fa.mastodon.MastodonApplication;
 import com.keylesspalace.tusky.R;
 import com.fa.mastodon.interfaces.AdapterItemRemover;
 import com.fa.mastodon.interfaces.StatusActionListener;
@@ -28,6 +31,7 @@ import com.fa.mastodon.entity.Status;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.prefs.Preferences;
 
 public class TimelineAdapter extends RecyclerView.Adapter implements AdapterItemRemover {
     private static final int VIEW_TYPE_STATUS = 0;
@@ -54,9 +58,25 @@ public class TimelineAdapter extends RecyclerView.Adapter implements AdapterItem
         switch (viewType) {
             default:
             case VIEW_TYPE_STATUS: {
-                View view = LayoutInflater.from(viewGroup.getContext())
-                        .inflate(R.layout.item_status, viewGroup, false);
-                return new StatusViewHolder(view);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(viewGroup.getContext());
+                if(preferences.getBoolean("stories", false)){
+                    View view = LayoutInflater.from(viewGroup.getContext())
+                            .inflate(R.layout.item_story, viewGroup, false);
+
+                    return new StatusViewHolder(view);
+                } else {
+                    if(preferences.getBoolean("screenFilling", false)){
+                        View view = LayoutInflater.from(viewGroup.getContext())
+                                .inflate(R.layout.item_status_filling, viewGroup, false);
+
+                        return new StatusViewHolder(view);
+                    } else {
+                        View view = LayoutInflater.from(viewGroup.getContext())
+                                .inflate(R.layout.item_status, viewGroup, false);
+
+                        return new StatusViewHolder(view);
+                    }
+                }
             }
             case VIEW_TYPE_FOOTER: {
                 View view;

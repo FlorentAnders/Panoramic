@@ -41,6 +41,8 @@ import com.github.chrisbanes.photoview.OnOutsidePhotoTapListener;
 import com.github.chrisbanes.photoview.OnSingleFlingListener;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.github.chrisbanes.photoview.PhotoViewAttacher;
+import com.gjiazhe.panoramaimageview.GyroscopeObserver;
+import com.gjiazhe.panoramaimageview.PanoramaImageView;
 import com.keylesspalace.tusky.R;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -56,8 +58,10 @@ public class ViewMediaFragment extends DialogFragment implements Toolbar.OnMenuI
 
     private static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
-    @BindView(R.id.view_media_image)
-    PhotoView photoView;
+    @BindView(R.id.panorama_image_view)
+    PanoramaImageView photoView;
+
+    private GyroscopeObserver gyroscopeObserver;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -74,6 +78,12 @@ public class ViewMediaFragment extends DialogFragment implements Toolbar.OnMenuI
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_FullScreen);
+
+        gyroscopeObserver = new GyroscopeObserver();
+        // Set the maximum radian the device should rotate to show image's bounds.
+        // It should be set between 0 and π/2.
+        // The default value is π/9.
+        gyroscopeObserver.setMaxRotateRadian(Math.PI/9);
     }
 
     @Override
@@ -83,6 +93,15 @@ public class ViewMediaFragment extends DialogFragment implements Toolbar.OnMenuI
         params.height = WindowManager.LayoutParams.MATCH_PARENT;
         getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
         super.onResume();
+
+        gyroscopeObserver.register(getContext());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // Unregister GyroscopeObserver.
+        gyroscopeObserver.unregister();
     }
 
     @Override
@@ -135,6 +154,8 @@ public class ViewMediaFragment extends DialogFragment implements Toolbar.OnMenuI
                         toolbar.inflateMenu(R.menu.view_media_tooblar);
 
                         attacher.update();
+
+                        photoView.setGyroscopeObserver(gyroscopeObserver);
                     }
 
                     @Override

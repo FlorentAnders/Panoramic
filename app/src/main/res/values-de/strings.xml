@@ -219,4 +219,15 @@
 
     <string name="plus_intro">Diese Funktion ist nur in Panoramic+ verfügbar</string>
     <string name="plus_get">Laden</string>
+
+    <string name="theme">Thema</string>
+    <string name="theme_summary">Wähle das Thema aus, welches du gerne nutzen würdest</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_black">Schwarz</string>
+
+    <string name="screenfilling_cards">Breitere Karten</string>
+
+    <string name="stories_enable">Stories</string>
+    <string name="stories_summary">Stories ist ein alternatives, bildschirmfüllendes Layout</string>
 </resources>

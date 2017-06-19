@@ -7,10 +7,13 @@
     android:background="@android:color/black"
     android:clickable="true">
 
-    <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/view_media_image"
+    <com.gjiazhe.panoramaimageview.PanoramaImageView
+        android:id="@+id/panorama_image_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:piv_enablePanoramaMode="true"
+        app:piv_show_scrollbar="true"
+        app:piv_invertScrollDirection="false" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

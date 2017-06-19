@@ -127,6 +127,23 @@ public class TimelineFragment extends SFragment implements
         //recyclerView.addItemDecoration(divider);
         adapter = new TimelineAdapter(this);
         recyclerView.setAdapter(adapter);
+        if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean("stories", false)){
+            LinearLayoutManager layoutManager
+                    = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+
+            recyclerView.setLayoutManager(layoutManager);
+            recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                    super.onScrollStateChanged(recyclerView, newState);
+                    if (recyclerView.getAdapter().getItemCount() != 0) {
+                        int lastVisibleItemPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
+                        if (lastVisibleItemPosition != RecyclerView.NO_POSITION && lastVisibleItemPosition == recyclerView.getAdapter().getItemCount() - 1)
+                            onLoadMore(recyclerView);
+                    }
+                }
+            });
+        }
 
         timelineReceiver = new TimelineReceiver(adapter);
         LocalBroadcastManager.getInstance(context.getApplicationContext()).registerReceiver(timelineReceiver, TimelineReceiver.getFilter(kind));
@@ -206,6 +223,13 @@ public class TimelineFragment extends SFragment implements
             };
         }
         recyclerView.addOnScrollListener(scrollListener);
+
+        Status status = adapter.getItem(0);
+        if (status != null) {
+            sendFetchTimelineRequest(null, status.id);
+        } else {
+            sendFetchTimelineRequest(null, null);
+        }
 
         preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
     }

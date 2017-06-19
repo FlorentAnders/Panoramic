@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -81,8 +82,10 @@ public class LoginActivity extends AppCompatActivity implements BillingProcessor
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("lightTheme", true)) {
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("light")){
             setTheme(R.style.AppTheme_Light);
+        } else if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("black")){
+            setTheme(R.style.AppThemeAmoled);
         }
 
         setContentView(R.layout.activity_login);

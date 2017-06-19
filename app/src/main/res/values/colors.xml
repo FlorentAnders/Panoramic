@@ -73,4 +73,6 @@
     <color name="custom_tab_toolbar_light">#ffffff</color>
 
     <color name="ee">#EEEEEE</color>
+
+    <color name="separator_amoled">#222222</color>
 </resources>

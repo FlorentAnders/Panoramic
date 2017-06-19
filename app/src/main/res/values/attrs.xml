@@ -42,6 +42,7 @@
     <attr name="report_status_divider_drawable" format="reference" />
 
     <attr name="cardStyle" format="reference" />
+    <attr name="cardStyleFilled" format="reference" />
     <attr name="separatorColor" format="reference" />
 
 </resources>

@@ -230,4 +230,15 @@
 
     <string name="plus_intro">This is only available to Panoramic+</string>
     <string name="plus_get">Get</string>
+
+    <string name="theme">Theme</string>
+    <string name="theme_summary">Select the theme you would like to use</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_black">Black</string>
+
+    <string name="screenfilling_cards">Wider cards</string>
+
+    <string name="stories_enable">Stories</string>
+    <string name="stories_summary">Stories in an immersive alternative experience inside of Panoramic</string>
 </resources>

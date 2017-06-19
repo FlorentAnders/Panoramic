@@ -8,6 +8,18 @@
     <string name="oauth_redirect_host" translatable="false">com.fa.imaged</string>
     <string name="preferences_file_key" translatable="false">com.fa.imaged.PREFERENCES</string>
 
-    <string name="version_number" translatable="false">2.0.0</string>
+    <string name="version_number" translatable="false">2.1.0</string>
     <string name="copyright" translatable="false">Copyright © 2017 FA</string>
+
+    <string-array name="themes_array" translatable="false">
+        <item>@string/theme_light</item>
+        <item>@string/theme_dark</item>
+        <item>@string/theme_black</item>
+    </string-array>
+
+    <string-array name="themes_inserted" translatable="false">
+        <item>light</item>
+        <item>dark</item>
+        <item>black</item>
+    </string-array>
 </resources>

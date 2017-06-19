@@ -31,8 +31,10 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("lightTheme", true)) {
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("light")){
             setTheme(R.style.AppTheme_Light);
+        } else if (PreferenceManager.getDefaultSharedPreferences(this).getString("theme_selection", "light").equals("black")){
+            setTheme(R.style.AppThemeAmoled);
         }
 
         super.onCreate(savedInstanceState);
