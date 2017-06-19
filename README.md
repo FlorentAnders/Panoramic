@@ -10,7 +10,7 @@ My Mastodon account is [florentanders@social.tchncs.de](https://social.tchncs.de
 
 ## License
 
-Panoramic is licensed under the GNU General Public License version 3. This means that you can use the code and publish your own fork of the app. Copying the app and not releasing your source code will follow in a Digital Millenium Copyrights Act request that will result in a takedown of your app. I am serious about this.
+Panoramic is licensed under the GNU General Public License version 3. This means that you can use the code and publish your own fork of the app. Following the GPLv3 means that you NEED to publish your modified source code, as you are violating the license if you do not do so.
 
 [Check out the license here](https://github.com/FlorentAnders/Panoramic/blob/master/LICENSE)
 
